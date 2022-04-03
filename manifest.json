@@ -3,11 +3,22 @@
   "name": "NameMC Extras",
   "version": "2.0",
   "description": "By Faav#6320",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "content_scripts": [
     {
-      "matches": [ "*://namemc.com/*" ],
-      "js": [ "js/namemc-inject.js" ],
-      "css": [ "css/namemc-firefox.css" ],
+      "matches": [
+        "*://namemc.com/*"
+      ],
+      "js": [
+        "js/namemc-inject.js"
+      ],
+      "css": [
+        "css/namemc-firefox.css"
+      ],
       "run_at": "document_start"
     }
   ]

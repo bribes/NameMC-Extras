@@ -1,5 +1,5 @@
 # NameMC Extras (Beta)
-A Chromium Extension that adds many features to NameMC currently work in progress.
+A Firefox Extension that adds many features to NameMC currently work in progress.
 
 Same installation as NameMC+
 

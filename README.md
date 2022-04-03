@@ -5,4 +5,4 @@ If you want to install on Firefox since we currently don't have it released on t
 
 [To install follow these steps.](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
 
-Rewrite of NameMC+ currently only adds account types and creation dates.
+Rewrite of NameMC+ currently only adds account types and creation dates and removes ads.

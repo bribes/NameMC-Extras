@@ -3,7 +3,7 @@
     if (document.body == null) document.body = document.createElement('body');
     document.documentElement.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;';
     document.body.innerHTML = '';
-    document.body.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;';
+    document.body.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;margin: 0;';
 
     var addThemeRange = document.createRange();
     var addThemeHTML = addThemeRange.createContextualFragment(`<iframe name="add_theme" srcdoc='<script>
@@ -82,6 +82,13 @@
             aTag.onclick = function() {
               var target = this.target ? this.target : '_self';
               window.parent.open(this.href, target);
+            }
+          } else if (aTag.onclick.toString().includes('lang')) {
+            var langChange = aTag.getAttribute('onclick');
+            aTag.onclick = function(event) {
+              event.preventDefault();
+              eval('window.parent.namemc_if.contentWindow.' + langChange);
+              window.parent.location.href = this.href;
             }
           }
         });

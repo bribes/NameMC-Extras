@@ -1,18 +1,18 @@
 /* copyright 2022 | Faav#6320 | github.com/bribes */
-(function() {
-    if (window.location.host !== 's.namemc.com') {
-        function getCookie(name) {
-            let cookies = Object.fromEntries(document.cookie.split(';').map(e => e.split('=').map(e => decodeURIComponent(e.trim()))));
-            return cookies[name];
-        }
-        if (window.location.pathname == '/' && window.location.host.split('.')[0].length !== 2 && getCookie('lang') && getCookie('lang') !== 'en') window.open(`https://${getCookie('lang')}.namemc.com/`, '_self');
-        if (document.body == null) document.body = document.createElement('body');
-        document.documentElement.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;';
-        document.body.innerHTML = '';
-        document.body.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;margin: 0;';
+(function () {
+  if (window.location.host !== 's.namemc.com') {
+    function getCookie(name) {
+      let cookies = Object.fromEntries(document.cookie.split(';').map(e => e.split('=').map(e => decodeURIComponent(e.trim()))));
+      return cookies[name];
+    }
+    if (window.location.pathname == '/' && window.location.host.split('.')[0].length !== 2 && getCookie('lang') && getCookie('lang') !== 'en') window.open(`https://${getCookie('lang')}.namemc.com/`, '_self');
+    if (document.body == null) document.body = document.createElement('body');
+    document.documentElement.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;';
+    document.body.innerHTML = '';
+    document.body.style = 'height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;margin: 0;';
 
-        var addThemeRange = document.createRange();
-        var addThemeHTML = addThemeRange.createContextualFragment(`<iframe name="add_theme" srcdoc='<script>
+    var addThemeRange = document.createRange();
+    var addThemeHTML = addThemeRange.createContextualFragment(`<iframe name="add_theme" srcdoc='<script>
   /* grabs cookie to get theme */
   function getCookie(name) {
     let cookies = Object.fromEntries(window.parent.document.cookie.split(";").map(e => e.split("=").map(e => decodeURIComponent(e.trim()))));
@@ -34,10 +34,10 @@
       window.parent.document.body.style.color = "#363642";
   }
 </script>' style='display:none;'></iframe>`);
-        document.body.appendChild(addThemeHTML);
+    document.body.appendChild(addThemeHTML);
 
-        var loaderRange = document.createRange();
-        var loaderHTML = loaderRange.createContextualFragment(`<iframe id="loader_if" srcdoc='<html style="height:100%;"><head>
+    var loaderRange = document.createRange();
+    var loaderHTML = loaderRange.createContextualFragment(`<iframe id="loader_if" srcdoc='<html style="height:100%;"><head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body style="height: 100%;width: 100%;display: flex;align-items: center;justify-content: center;align-content: center;">
@@ -68,12 +68,12 @@
 </script>
 </body>
 </html>' style="width: 100%;height: 100%;border: none;"></iframe>`);
-        document.body.appendChild(loaderHTML);
+    document.body.appendChild(loaderHTML);
 
-        (async function() {
-            /* loads namemc iframe */
-            var mainRange = document.createRange();
-            var mainHTML = mainRange.createContextualFragment(`<iframe id="namemc_if" src="${document.URL}" style="width: 100%;height: 100%;border: none;display:none;"></iframe>
+    (async function () {
+      /* loads namemc iframe */
+      var mainRange = document.createRange();
+      var mainHTML = mainRange.createContextualFragment(`<iframe id="namemc_if" src="${document.URL}" style="width: 100%;height: 100%;border: none;display:none;"></iframe>
 
     <iframe style="display:none;" name="inject_namemc_if" srcdoc="<script>
       var namemc_if_iframe = window.parent.document.querySelector('#namemc_if');
@@ -247,7 +247,7 @@
       };
     </script>"></iframe>
   `);
-            document.body.appendChild(mainHTML);
-        })();
-    }
+      document.body.appendChild(mainHTML);
+    })();
+  }
 })();
